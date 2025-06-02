@@ -1,19 +1,22 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
+import org.skypro.skyshop.product.DiscountedProduct;
+import org.skypro.skyshop.product.FixPriceProduct;
 import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.SimpleProduct;
 
 public class App {
         public static void main(String[] args) {
 
             ProductBasket basket1 = new ProductBasket();
 
-            Product apple = new Product("Яблоки", 80);
-            Product banana = new Product("Бананы", 100);
-            Product coconut = new Product("Кокосы", 120);
-            Product duck = new Product("Утка", 140);
-            Product eggs = new Product("Яйца", 160);
-            Product fish = new Product("Рыба", 180);
+            Product apple = new SimpleProduct("Яблоки", 80);
+            Product banana = new SimpleProduct("Бананы", 100);
+            Product coconut = new SimpleProduct("Кокосы", 120);
+            Product duck = new DiscountedProduct("Утка", 140, 10);
+            Product eggs = new FixPriceProduct("Яйца");
+            Product fish = new SimpleProduct("Рыба", 180);
 
 
             basket1.addProduct(apple);
@@ -39,7 +42,7 @@ public class App {
 
             basket1.hasProduct("Утка");
 
-            /// я затопил соседей снизу своими слезами и сломал всё стекло соседям сверху от мощи криков, пока делал это домашнее задание((. Надеюсь, оно того стоило.
+
 
 
         }
